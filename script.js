@@ -1,16 +1,13 @@
 let cart = [];
+let total = 0;
 
-function add(item){
-  cart.push(item);
-  document.getElementById("count").innerText = cart.length;
+function addItem(name, price){
+  cart.push(name);
 
-  let list = document.getElementById("list");
   let li = document.createElement("li");
-  li.innerText = item;
-  list.appendChild(li);
-}
+  li.innerText = name + " - $" + price;
+  document.getElementById("cartList").appendChild(li);
 
-function toggleCart(){
-  let c = document.getElementById("cart");
-  c.style.display = "block";
+  total += price;
+  document.getElementById("total").innerText = "Total: $" + total;
 }
