@@ -8,27 +8,22 @@ function addToCart(item) {
 function updateCart() {
   document.getElementById("cartCount").innerText = cart.length;
 
-  let list = document.getElementById("cartItems");
+  let list = document.getElementById("cartList");
   list.innerHTML = "";
 
-  cart.forEach((item, index) => {
+  cart.forEach(i => {
     let li = document.createElement("li");
-    li.innerHTML = item + " <button onclick='removeItem(" + index + ")'>X</button>";
+    li.textContent = i;
     list.appendChild(li);
   });
 }
 
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
+function toggleCart() {
+  let c = document.getElementById("cart");
+  c.style.display = c.style.display === "block" ? "none" : "block";
 }
 
 function clearCart() {
   cart = [];
   updateCart();
-}
-
-function toggleCart() {
-  let box = document.getElementById("cartBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
 }
