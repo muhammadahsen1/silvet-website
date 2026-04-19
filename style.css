@@ -15,43 +15,33 @@ body {
   position: relative;
 }
 
-/* DARK OVERLAY */
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right:0;
-  bottom:0;
+  inset: 0;
   background: rgba(0,0,0,0.35);
 }
 
-/* DANCING LOGO */
 .logo {
   font-size: 80px;
   color: white;
   font-weight: bold;
-  letter-spacing: 8px;
   z-index: 1;
   animation: dance 3s infinite ease-in-out;
-  text-shadow: 0 0 25px rgba(255,255,255,0.7);
 }
 
 @keyframes dance {
   0% { transform: translateY(0); }
-  25% { transform: translateY(-12px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(12px); }
+  50% { transform: translateY(-12px); }
   100% { transform: translateY(0); }
 }
 
-/* SECTIONS */
+/* SHOP */
 section {
   padding: 60px 20px;
   text-align: center;
 }
 
-/* SHOP GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -73,6 +63,15 @@ section {
   object-fit: cover;
 }
 
+button {
+  width: 100%;
+  padding: 10px;
+  background: #6c5ce7;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 /* GALLERY */
 .gallery {
   display: grid;
@@ -87,4 +86,28 @@ section {
   height: 130px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+/* END SECTION */
+.end {
+  background: #111827;
+  color: white;
+  padding: 60px 20px;
+}
+
+.small {
+  opacity: 0.6;
+  margin-top: 20px;
+}
+
+/* CART */
+#cartBox {
+  position: fixed;
+  right: 10px;
+  top: 80px;
+  background: white;
+  padding: 10px;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
