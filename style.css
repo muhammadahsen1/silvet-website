@@ -1,83 +1,81 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial;
-}
-
 body {
-  background: #0f0f0f;
+  margin: 0;
+  font-family: Arial;
+  background: #0b0b10;
   color: white;
-}
-
-/* HEADER */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 20px;
-  background: black;
-  z-index: 100;
-}
-
-.logo {
-  color: gold;
-  font-weight: bold;
 }
 
 /* NAV */
-nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  z-index: 1000;
+  border-bottom: 2px solid #00ffd5;
+}
+
+.logo {
+  font-weight: bold;
+  color: #00ffd5;
+}
+
+.cart-btn {
+  background: #ffcc00;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* HERO */
 .hero {
-  height: 90vh;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(135deg, #1a1a40, #000);
+}
+
+.logoAnim {
+  font-size: 60px;
+  color: #00ffd5;
+  animation: float 2.5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* SHOP */
+section {
+  padding: 60px 20px;
   text-align: center;
-  background: url("https://images.unsplash.com/photo-1441986300917-64674bd600d8") center/cover;
 }
 
-.heroText h1 {
-  font-size: 50px;
-}
-
-/* CONTAINER */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* SECTION */
-.section {
-  padding: 50px 0;
-  text-align: center;
-}
-
-/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-/* CARD */
 .card {
   background: #1a1a1a;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-  transition: 0.2s ease;
+  transition: 0.2s;
 }
 
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .card img {
@@ -89,38 +87,35 @@ nav a {
 button {
   width: 100%;
   padding: 8px;
+  background: #00ffd5;
   border: none;
-  background: gold;
   cursor: pointer;
 }
 
 /* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 8px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .gallery img {
   width: 100%;
-  height: 120px;
+  height: 130px;
   object-fit: cover;
-  border-radius: 6px;
-  transition: 0.2s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
+  border-radius: 8px;
 }
 
 /* CART */
-#cartBox {
+#cart {
   position: fixed;
   right: 10px;
   top: 70px;
   background: white;
   color: black;
   padding: 10px;
-  display: none;
   width: 200px;
+  border-radius: 10px;
 }
