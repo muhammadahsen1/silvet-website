@@ -1,131 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silvet Store</title>
-<link rel="stylesheet" href="style.css">
+<title>Silvet</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* NAV */
+nav {
+    background: black;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* CART BUTTON */
+.cart-btn {
+    background: gold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb") center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* SECTION */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* GRID */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* CARD (FIXED SIZE) */
+.card {
+    width: 220px;
+    margin: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f5f5f5;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;   /* FIXED (no zoom problem now) */
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* CART */
+#cartBox {
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+/* COLORS */
+#hoodies { background: #eee; }
+#tshirts { background: #ffe6f0; }
+#caps { background: #e6ffe6; }
+
+/* GALLERY (FIXED SMALL GRID) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">SILVET</div>
+<nav>
+<div>
+<a href="#home">Home</a>
+<a href="#hoodies">Hoodies</a>
+<a href="#tshirts">T-Shirts</a>
+<a href="#caps">Caps</a>
+</div>
 
-  <nav>
-    <a href="#men">Men</a>
-    <a href="#women">Women</a>
-    <a href="#gallery">Gallery</a>
-  </nav>
-
-  <div class="cartBtn" onclick="toggleCart()">
-    🛒 <span id="cartCount">0</span>
-  </div>
-</header>
+<div class="cart-btn" onclick="toggleCart()">🛒 Cart</div>
+</nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="heroText">
-    <h1>Silvet Fashion</h1>
-    <p>Clean style. Modern energy.</p>
-  </div>
-</section>
+<div class="hero" id="home">
+<h1>Silvet</h1>
+</div>
 
-<div class="container">
-
-<!-- MEN -->
-<section id="men" class="section">
-<h2>Men Collection</h2>
+<!-- HOODIES -->
+<section id="hoodies">
+<h2>Hoodies ($50)</h2>
 
 <div class="grid">
-
 <div class="card">
 <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-<h3>Hoodie</h3>
-<button onclick="addToCart('Hoodie')">Add</button>
+<p>Classic Hoodie</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
-<h3>T-Shirt</h3>
-<button onclick="addToCart('T-Shirt')">Add</button>
+<p>Street Hoodie</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
-<h3>Jacket</h3>
-<button onclick="addToCart('Jacket')">Add</button>
+<p>Premium Hoodie</p>
 </div>
-
 </div>
 </section>
 
-<!-- WOMEN -->
-<section id="women" class="section">
-<h2>Women Collection</h2>
+<!-- TSHIRTS -->
+<section id="tshirts">
+<h2>T-Shirts ($20)</h2>
 
 <div class="grid">
-
 <div class="card">
-<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-<h3>Dress</h3>
-<button onclick="addToCart('Dress')">Add</button>
+<img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47">
+<p>Basic Tee</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
-<h3>Outfit</h3>
-<button onclick="addToCart('Outfit')">Add</button>
+<img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a">
+<p>Stylish Tee</p>
 </div>
+</div>
+</section>
 
+<!-- CAPS -->
+<section id="caps">
+<h2>Caps ($15)</h2>
+
+<div class="grid">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
-<h3>Style Wear</h3>
-<button onclick="addToCart('Style Wear')">Add</button>
+<p>Prayer Cap</p>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593032465171-8c0c4b1b0e7c">
+<p>Premium Cap</p>
+</div>
 </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="section">
+<section>
 <h2>Gallery</h2>
 
 <div class="gallery">
 
-<!-- fashion -->
-<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
-<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-
-<!-- bikes -->
 <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
 <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39">
-
-<!-- cars -->
 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
 <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
-
-<!-- scenery -->
 <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-
-<!-- street fashion -->
 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
 <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
 
 </div>
 </section>
 
-</div>
-
-<!-- CART -->
+<!-- CART BOX -->
 <div id="cartBox">
-  <h3>Cart</h3>
-  <ul id="cartList"></ul>
-  <button onclick="clearCart()">Clear</button>
+<p>Your cart is empty</p>
 </div>
 
-<script src="script.js"></script>
+<script>
+function toggleCart() {
+    let cart = document.getElementById("cartBox");
+    cart.style.display = cart.style.display === "block" ? "none" : "block";
+}
+</script>
+
 </body>
 </html>
