@@ -3,58 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silvet | Luxury Fashion</title>
+<title>Silvet</title>
 
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #000, #1a1a1a);
-    color: white;
-    scroll-behavior: smooth;
+    font-family: Arial;
 }
 
 /* NAV */
 nav {
+    background: black;
+    padding: 15px;
     position: fixed;
     width: 100%;
-    background: linear-gradient(90deg, #000, purple);
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1000;
 }
 
 nav a {
     color: white;
-    margin: 0 10px;
+    margin: 10px;
     text-decoration: none;
-}
-
-.cart-icon {
-    cursor: pointer;
-    font-weight: bold;
 }
 
 /* HERO */
 .hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover;
+    background: url("t.jpg") center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 70px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
+    color: white;
 }
 
 /* SECTION */
@@ -63,21 +41,20 @@ section {
     text-align: center;
 }
 
-/* CARDS */
-.cards {
+/* GRID */
+.grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* CARD */
 .card {
-    width: 260px;
+    width: 250px;
     margin: 15px;
+    background: #f5f5f5;
     border-radius: 10px;
     overflow: hidden;
-    background: #111;
-    box-shadow: 0 0 20px rgba(255,0,255,0.3);
-    transition: 0.3s;
 }
 
 .card img {
@@ -86,43 +63,31 @@ section {
     object-fit: cover;
 }
 
-.card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px gold;
-}
-
 /* BUTTON */
 button {
-    background: gold;
-    border: none;
     padding: 10px;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* CART PAGE */
-#cartPage {
-    display: none;
-    padding: 50px;
+    border: none;
     background: black;
+    color: white;
+    width: 100%;
 }
 
 /* GALLERY */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-}
-
 .gallery img {
-    width: 100%;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
+    margin: 10px;
 }
 
-/* FOOTER */
+/* COLORS */
+#hoodies { background: #f0f0f0; }
+#tshirts { background: #fff0f5; }
+#caps { background: #f0fff0; }
+
 footer {
     background: black;
-    text-align: center;
+    color: white;
     padding: 20px;
 }
 </style>
@@ -131,97 +96,97 @@ footer {
 <body>
 
 <nav>
-<div>
 <a href="#home">Home</a>
-<a href="#shop">Shop</a>
+<a href="#hoodies">Hoodies</a>
+<a href="#tshirts">T-Shirts</a>
+<a href="#caps">Caps</a>
 <a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-</div>
-
-<div class="cart-icon" onclick="openCart()">🛒 Cart</div>
 </nav>
 
 <!-- HERO -->
 <div class="hero" id="home">
-<div>
 <h1>Silvet</h1>
-<p>Luxury Streetwear & Tradition</p>
-</div>
 </div>
 
-<!-- SHOP -->
-<section id="shop">
-<h2>Shop Collection</h2>
+<!-- HOODIES -->
+<section id="hoodies">
+<h2>Hoodies ($50)</h2>
 
-<div class="cards">
-
+<div class="grid">
 <div class="card">
-<img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47">
-<p>T-Shirt - $20</p>
-<button onclick="addToCart('T-Shirt - $20')">Add</button>
+<img src="hoodie1.webp">
+<p>Classic Hoodie</p>
+<button>Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2">
-<p>Hoodie - $50</p>
-<button onclick="addToCart('Hoodie - $50')">Add</button>
+<img src="hoodie2.webp">
+<p>Street Hoodie</p>
+<button>Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1593032465171-8c0c4b1b0e7c">
-<p>Muslim Cap - $15</p>
-<button onclick="addToCart('Cap - $15')">Add</button>
+<img src="hoodie3.webp">
+<p>Premium Hoodie</p>
+<button>Add to Cart</button>
 </div>
-
 </div>
 </section>
 
-<!-- CART PAGE -->
-<section id="cartPage">
-<h2>Your Cart</h2>
-<p id="cartItems">Cart is empty</p>
-<button onclick="closeCart()">Close</button>
+<!-- TSHIRTS -->
+<section id="tshirts">
+<h2>T-Shirts ($20)</h2>
+
+<div class="grid">
+<div class="card">
+<img src="t.jpg">
+<p>Basic Tee</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="p.jpg">
+<p>Stylish Tee</p>
+<button>Add to Cart</button>
+</div>
+</div>
+</section>
+
+<!-- CAPS -->
+<section id="caps">
+<h2>Muslim Caps ($15)</h2>
+
+<div class="grid">
+<div class="card">
+<img src="cap.jpg">
+<p>Prayer Cap</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="cp.jpg">
+<p>Premium Cap</p>
+<button>Add to Cart</button>
+</div>
+</div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
-<h2>Fashion Gallery</h2>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
-<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-<img src="https://images.unsplash.com/photo-1520975922215-2303f64b4a44">
-<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-</div>
-</section>
+<h2>Gallery</h2>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-<p><a href="mailto:finetraders@gmail.com">finetraders@gmail.com</a></p>
-<p><a href="mailto:SilvetinTrend@gmail.com">SilvetinTrend@gmail.com</a></p>
+<div class="gallery">
+<img src="hoodie1.webp">
+<img src="hoodie2.webp">
+<img src="t.jpg">
+<img src="cap.jpg">
+</div>
+
 </section>
 
 <footer>
-<p>© Silvet 2026</p>
+<p>© Silvet</p>
 </footer>
-
-<script>
-let cart = [];
-
-function addToCart(item) {
-    cart.push(item);
-    alert(item + " added!");
-}
-
-function openCart() {
-    document.getElementById("cartPage").style.display = "block";
-    document.getElementById("cartItems").innerText = cart.join(", ");
-}
-
-function closeCart() {
-    document.getElementById("cartPage").style.display = "none";
-}
-</script>
 
 </body>
 </html>
