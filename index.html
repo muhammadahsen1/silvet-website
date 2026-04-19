@@ -1,206 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Silvet</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-}
-
-/* NAV */
-nav {
-    background: black;
-    padding: 15px;
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-}
-
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-}
-
-/* CART BUTTON */
-.cart-btn {
-    background: gold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* HERO */
-.hero {
-    height: 100vh;
-    background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb") center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-/* SECTION */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-/* GRID */
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* CARD */
-.card {
-    width: 250px;
-    margin: 15px;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #f5f5f5;
-    transition: 0.3s;
-}
-
-.card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.card:hover {
-    transform: scale(1.08);
-}
-
-/* CART POPUP */
-#cartBox {
-    display: none;
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px black;
-}
-
-/* COLORS */
-#hoodies { background: #eee; }
-#tshirts { background: #ffe6f0; }
-#caps { background: #e6ffe6; }
-
-/* GALLERY */
-.gallery img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    margin: 10px;
-}
-</style>
+<title>Silvet Store</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-<div>
-<a href="#home">Home</a>
-<a href="#hoodies">Hoodies</a>
-<a href="#tshirts">T-Shirts</a>
-<a href="#caps">Caps</a>
-</div>
+<!-- NAV -->
+<header>
+  <div class="logo">SILVET</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#men">Men</a>
+    <a href="#women">Women</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
 
-<div class="cart-btn" onclick="toggleCart()">🛒 Cart</div>
-</nav>
+  <div class="cart" onclick="toggleCart()">
+    🛒 Cart (<span id="cartCount">0</span>)
+  </div>
+</header>
 
 <!-- HERO -->
-<div class="hero" id="home">
-<h1>Silvet</h1>
-</div>
+<section id="home" class="hero">
+  <h1>Modern Fashion Store</h1>
+  <p>Style that moves with energy ⚡</p>
+</section>
 
-<!-- HOODIES -->
-<section id="hoodies">
-<h2>Hoodies ($50)</h2>
+<!-- MEN -->
+<section id="men">
+<h2>Men Collection</h2>
 
 <div class="grid">
-<div class="card">
-<img src="hoodie1.webp">
-<p>Classic Hoodie</p>
-</div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+    <h3>Black Hoodie</h3>
+    <button onclick="addToCart('Black Hoodie')">Add to Cart</button>
+  </div>
 
-<div class="card">
-<img src="hoodie2.webp">
-<p>Street Hoodie</p>
-</div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+    <h3>Street T-Shirt</h3>
+    <button onclick="addToCart('Street T-Shirt')">Add to Cart</button>
+  </div>
 
-<div class="card">
-<img src="hoodie3.webp">
-<p>Premium Hoodie</p>
-</div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+    <h3>Casual Jacket</h3>
+    <button onclick="addToCart('Casual Jacket')">Add to Cart</button>
+  </div>
 </div>
 </section>
 
-<!-- TSHIRTS (FIXED WITH ONLINE IMAGES) -->
-<section id="tshirts">
-<h2>T-Shirts ($20)</h2>
+<!-- WOMEN -->
+<section id="women">
+<h2>Women Collection</h2>
 
 <div class="grid">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47">
-<p>Basic Tee</p>
-</div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
+    <h3>Elegant Dress</h3>
+    <button onclick="addToCart('Elegant Dress')">Add to Cart</button>
+  </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a">
-<p>Stylish Tee</p>
-</div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1520974735194-6d3a8c9d7c9b">
+    <h3>Casual Wear</h3>
+    <button onclick="addToCart('Casual Wear')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+    <h3>Summer Outfit</h3>
+    <button onclick="addToCart('Summer Outfit')">Add to Cart</button>
+  </div>
 </div>
 </section>
 
-<!-- CAPS (FIXED) -->
-<section id="caps">
-<h2>Muslim Caps ($15)</h2>
-
-<div class="grid">
-<div class="card">
-<img src="cap.jpg">
-<p>Prayer Cap</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1593032465171-8c0c4b1b0e7c">
-<p>Premium Cap</p>
-</div>
-</div>
-</section>
-
-<!-- GALLERY -->
-<section>
-<h2>Gallery</h2>
+<!-- GALLERY (15 IMAGES) -->
+<section id="gallery">
+<h2>Fashion Gallery</h2>
 
 <div class="gallery">
-<img src="hoodie1.webp">
-<img src="hoodie2.webp">
-<img src="cap.jpg">
+
+<img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+<img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+<img src="https://images.unsplash.com/photo-1520974735194-6d3a8c9d7c9b">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
+<img src="https://images.unsplash.com/photo-1483118714900-540cf339fd46">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<img src="https://images.unsplash.com/photo-1521334884684-d80222895322">
 <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+<img src="https://images.unsplash.com/photo-1520975958221-8f6a7d2b5d7c">
+<img src="https://images.unsplash.com/photo-1514996937319-344454492b37">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
+<img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
+
 </div>
 </section>
 
-<!-- CART BOX -->
+<!-- CART -->
 <div id="cartBox">
-<p>Your cart is empty</p>
+  <h3>Your Cart</h3>
+  <ul id="cartItems"></ul>
+  <button onclick="clearCart()">Clear Cart</button>
 </div>
 
-<script>
-function toggleCart() {
-    let cart = document.getElementById("cartBox");
-    cart.style.display = cart.style.display === "block" ? "none" : "block";
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
