@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Silvet Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silvet Fashion</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,46 +12,52 @@
 <!-- NAV -->
 <header>
   <div class="logo">SILVET</div>
+
   <nav>
-    <a href="#home">Home</a>
     <a href="#men">Men</a>
     <a href="#women">Women</a>
     <a href="#gallery">Gallery</a>
   </nav>
 
-  <div class="cart" onclick="toggleCart()">
-    🛒 Cart (<span id="cartCount">0</span>)
+  <div class="cartBtn" onclick="toggleCart()">
+    🛒 <span id="cartCount">0</span>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero">
-  <h1>Modern Fashion Store</h1>
-  <p>Style that moves with energy ⚡</p>
+<section class="hero">
+  <div class="heroText">
+    <h1>Silvet Fashion</h1>
+    <p>Minimal. Modern. Powerful Style.</p>
+  </div>
 </section>
+
+<div class="container">
 
 <!-- MEN -->
 <section id="men">
 <h2>Men Collection</h2>
 
 <div class="grid">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-    <h3>Black Hoodie</h3>
-    <button onclick="addToCart('Black Hoodie')">Add to Cart</button>
-  </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
-    <h3>Street T-Shirt</h3>
-    <button onclick="addToCart('Street T-Shirt')">Add to Cart</button>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+<h3>Black Hoodie</h3>
+<button onclick="addToCart('Black Hoodie')">Add</button>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
-    <h3>Casual Jacket</h3>
-    <button onclick="addToCart('Casual Jacket')">Add to Cart</button>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+<h3>Street Tee</h3>
+<button onclick="addToCart('Street Tee')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+<h3>Jacket</h3>
+<button onclick="addToCart('Jacket')">Add</button>
+</div>
+
 </div>
 </section>
 
@@ -59,56 +66,54 @@
 <h2>Women Collection</h2>
 
 <div class="grid">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
-    <h3>Elegant Dress</h3>
-    <button onclick="addToCart('Elegant Dress')">Add to Cart</button>
-  </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1520974735194-6d3a8c9d7c9b">
-    <h3>Casual Wear</h3>
-    <button onclick="addToCart('Casual Wear')">Add to Cart</button>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
+<h3>Elegant Dress</h3>
+<button onclick="addToCart('Dress')">Add</button>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-    <h3>Summer Outfit</h3>
-    <button onclick="addToCart('Summer Outfit')">Add to Cart</button>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+<h3>Summer Outfit</h3>
+<button onclick="addToCart('Outfit')">Add</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
+<h3>Casual Wear</h3>
+<button onclick="addToCart('Casual Wear')">Add</button>
+</div>
+
 </div>
 </section>
 
-<!-- GALLERY (15 IMAGES) -->
+<!-- GALLERY -->
 <section id="gallery">
-<h2>Fashion Gallery</h2>
+<h2>Gallery</h2>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
 <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
 <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
 <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
 <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
-<img src="https://images.unsplash.com/photo-1520974735194-6d3a8c9d7c9b">
 <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
-<img src="https://images.unsplash.com/photo-1483118714900-540cf339fd46">
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
 <img src="https://images.unsplash.com/photo-1521334884684-d80222895322">
-<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
-<img src="https://images.unsplash.com/photo-1520975958221-8f6a7d2b5d7c">
 <img src="https://images.unsplash.com/photo-1514996937319-344454492b37">
-<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
-<img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
 
 </div>
 </section>
 
+</div>
+
 <!-- CART -->
-<div id="cartBox">
+<div id="cart">
   <h3>Your Cart</h3>
-  <ul id="cartItems"></ul>
-  <button onclick="clearCart()">Clear Cart</button>
+  <ul id="cartList"></ul>
+  <button onclick="clearCart()">Clear</button>
 </div>
 
 <script src="script.js"></script>
