@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silvet</title>
 
 <style>
@@ -17,6 +16,9 @@ nav {
     padding: 15px;
     position: fixed;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
 }
 
 nav a {
@@ -25,10 +27,18 @@ nav a {
     text-decoration: none;
 }
 
+/* CART BUTTON */
+.cart-btn {
+    background: gold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* HERO */
 .hero {
     height: 100vh;
-    background: url("t.jpg") center/cover;
+    background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb") center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,9 +62,10 @@ section {
 .card {
     width: 250px;
     margin: 15px;
-    background: #f5f5f5;
     border-radius: 10px;
     overflow: hidden;
+    background: #f5f5f5;
+    transition: 0.3s;
 }
 
 .card img {
@@ -63,14 +74,25 @@ section {
     object-fit: cover;
 }
 
-/* BUTTON */
-button {
-    padding: 10px;
-    border: none;
-    background: black;
-    color: white;
-    width: 100%;
+.card:hover {
+    transform: scale(1.08);
 }
+
+/* CART POPUP */
+#cartBox {
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+/* COLORS */
+#hoodies { background: #eee; }
+#tshirts { background: #ffe6f0; }
+#caps { background: #e6ffe6; }
 
 /* GALLERY */
 .gallery img {
@@ -79,28 +101,20 @@ button {
     object-fit: cover;
     margin: 10px;
 }
-
-/* COLORS */
-#hoodies { background: #f0f0f0; }
-#tshirts { background: #fff0f5; }
-#caps { background: #f0fff0; }
-
-footer {
-    background: black;
-    color: white;
-    padding: 20px;
-}
 </style>
 </head>
 
 <body>
 
 <nav>
+<div>
 <a href="#home">Home</a>
 <a href="#hoodies">Hoodies</a>
 <a href="#tshirts">T-Shirts</a>
 <a href="#caps">Caps</a>
-<a href="#gallery">Gallery</a>
+</div>
+
+<div class="cart-btn" onclick="toggleCart()">🛒 Cart</div>
 </nav>
 
 <!-- HERO -->
@@ -116,43 +130,38 @@ footer {
 <div class="card">
 <img src="hoodie1.webp">
 <p>Classic Hoodie</p>
-<button>Add to Cart</button>
 </div>
 
 <div class="card">
 <img src="hoodie2.webp">
 <p>Street Hoodie</p>
-<button>Add to Cart</button>
 </div>
 
 <div class="card">
 <img src="hoodie3.webp">
 <p>Premium Hoodie</p>
-<button>Add to Cart</button>
 </div>
 </div>
 </section>
 
-<!-- TSHIRTS -->
+<!-- TSHIRTS (FIXED WITH ONLINE IMAGES) -->
 <section id="tshirts">
 <h2>T-Shirts ($20)</h2>
 
 <div class="grid">
 <div class="card">
-<img src="t.jpg">
+<img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47">
 <p>Basic Tee</p>
-<button>Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="p.jpg">
+<img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a">
 <p>Stylish Tee</p>
-<button>Add to Cart</button>
 </div>
 </div>
 </section>
 
-<!-- CAPS -->
+<!-- CAPS (FIXED) -->
 <section id="caps">
 <h2>Muslim Caps ($15)</h2>
 
@@ -160,33 +169,38 @@ footer {
 <div class="card">
 <img src="cap.jpg">
 <p>Prayer Cap</p>
-<button>Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="cp.jpg">
+<img src="https://images.unsplash.com/photo-1593032465171-8c0c4b1b0e7c">
 <p>Premium Cap</p>
-<button>Add to Cart</button>
 </div>
 </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
+<section>
 <h2>Gallery</h2>
 
 <div class="gallery">
 <img src="hoodie1.webp">
 <img src="hoodie2.webp">
-<img src="t.jpg">
 <img src="cap.jpg">
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
 </div>
-
 </section>
 
-<footer>
-<p>© Silvet</p>
-</footer>
+<!-- CART BOX -->
+<div id="cartBox">
+<p>Your cart is empty</p>
+</div>
+
+<script>
+function toggleCart() {
+    let cart = document.getElementById("cartBox");
+    cart.style.display = cart.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
