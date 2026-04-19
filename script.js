@@ -19,8 +19,8 @@ function updateCart() {
 }
 
 function toggleCart() {
-  let c = document.getElementById("cart");
-  c.style.display = c.style.display === "block" ? "none" : "block";
+  let box = document.getElementById("cartBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
 }
 
 function clearCart() {
