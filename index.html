@@ -6,14 +6,16 @@
 
 <style>
 
+/* BASE */
 body {
     margin: 0;
     font-family: Arial;
+    background: #ffffff;
 }
 
-/* NAV */
+/* NAV (BRIGHTER + CLEANER) */
 nav {
-    background: black;
+    background: linear-gradient(90deg, #000000, #1a1a1a);
     padding: 15px;
     position: fixed;
     width: 100%;
@@ -24,20 +26,22 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     margin: 10px;
     text-decoration: none;
 }
 
-/* CART BUTTON */
+/* CART (MADE MORE VISIBLE) */
 .cart-btn {
-    background: gold;
+    background: #ffcc00;
+    color: black;
     padding: 8px 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-/* HERO */
+/* HERO (BRIGHTER SILVET FEEL) */
 .hero {
     height: 100vh;
     background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb") center/cover;
@@ -45,11 +49,12 @@ nav a {
     justify-content: center;
     align-items: center;
     color: white;
+    text-shadow: 2px 2px 10px black;
 }
 
 /* SECTION */
 section {
-    padding: 80px 20px;
+    padding: 70px 20px;
     text-align: center;
 }
 
@@ -60,55 +65,66 @@ section {
     justify-content: center;
 }
 
-/* CARD (FIXED SIZE) */
+/* CARD (FIXED SIZE = NO ZOOM ISSUES) */
 .card {
     width: 220px;
     margin: 12px;
     border-radius: 10px;
     overflow: hidden;
     background: #f5f5f5;
-    transition: 0.3s;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: scale(1.04);
 }
 
 .card img {
     width: 100%;
-    height: 200px;   /* FIXED (no zoom problem now) */
+    height: 200px;
     object-fit: cover;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* CART */
+/* CART BOX (BETTER LOOK) */
 #cartBox {
     display: none;
     position: fixed;
     top: 80px;
     right: 20px;
     background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px black;
+    padding: 15px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    width: 200px;
 }
 
 /* COLORS */
-#hoodies { background: #eee; }
-#tshirts { background: #ffe6f0; }
-#caps { background: #e6ffe6; }
+#hoodies { background: #f3f3f3; }
+#tshirts { background: #fff0f5; }
+#caps { background: #eaffea; }
 
-/* GALLERY (FIXED SMALL GRID) */
+/* GALLERY (SMALL + CLEAN FIX) */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 10px;
     padding: 10px;
 }
 
 .gallery img {
     width: 100%;
-    height: 140px;
+    height: 120px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 8px;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
 }
 
 </style>
@@ -129,7 +145,7 @@ section {
 
 <!-- HERO -->
 <div class="hero" id="home">
-<h1>Silvet</h1>
+<h1>SILVET FASHION</h1>
 </div>
 
 <!-- HOODIES -->
@@ -188,25 +204,46 @@ section {
 </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY (NEW SOOTHING + LIFESTYLE) -->
 <section>
 <h2>Gallery</h2>
 
 <div class="gallery">
 
+<!-- fashion -->
+<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+
+<!-- bikes -->
 <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-<img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39">
+
+<!-- cars -->
 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-<img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
+<!-- sunrise -->
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+<!-- waterfall -->
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
+<!-- nature -->
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
+<!-- street fashion -->
 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+
+<!-- style wear FIXED IMAGE -->
+<img src="https://images.unsplash.com/photo-1520975682031-a7e3a6c8fdf9">
 
 </div>
 </section>
 
-<!-- CART BOX -->
+<!-- FOOTER (EMAIL ADDED) -->
+<footer>
+<p>Contact: mailforqasimabbas@gmail.com</p>
+<p>© Silvet Fashion</p>
+</footer>
+
+<!-- CART -->
 <div id="cartBox">
 <p>Your cart is empty</p>
 </div>
