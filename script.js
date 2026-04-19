@@ -12,5 +12,5 @@ function add(item){
 
 function toggleCart(){
   let c = document.getElementById("cart");
-  c.style.display = c.style.display === "none" ? "block" : "block";
+  c.style.display = "block";
 }
